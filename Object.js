@@ -14,6 +14,7 @@ if(Object.prototype.isObject === undefined) {
 
 if(Object.prototype.isEqual === undefined) {
   Object.prototype.isEqual = function(o1, o2) {
+    if(!Object.isObject(o1) || !Object.isObject(o2)) return false;
     const keysO1 = Object.keys(o1);
     const keysO2 = Object.keys(o2);
     
