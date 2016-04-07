@@ -1,19 +1,19 @@
-if(Object.prototype.isEmpty === undefined) {
-  Object.prototype.isEmpty = function(o) {
-		if(!Object.isObject(o)) throw "TypeError: Argument is not an object.";
-		return(Object.keys(o).length === 0); 
-  };
-}
-
-if(Object.prototype.isObject === undefined) {
-  Object.prototype.isObject = function(o) {
+if(Object.isObject === undefined) {
+  Object.isObject = function(o) {
     if(typeof(o) !== "object") return false;
 		return(Array.isArray(o) || o === null) ? false : true;
   };
 }
 
-if(Object.prototype.isEqual === undefined) {
-  Object.prototype.isEqual = function(o1, o2) {
+if(Object.isEmpty === undefined) {
+  Object.isEmpty = function(o) {
+		if(!Object.isObject(o)) throw "TypeError: Argument is not an object.";
+		return(Object.keys(o).length === 0); 
+  };
+}
+
+if(Object.isEqual === undefined) {
+  Object.isEqual = function(o1, o2) {
     if(!Object.isObject(o1) || !Object.isObject(o2)) return false;
     const keysO1 = Object.keys(o1);
     const keysO2 = Object.keys(o2);
